@@ -22,6 +22,15 @@ Tools and Libraries
 - gawk: gawk is used to analyze the data of tracers of ndnSIM
 - py-matplotlib: matplotlib is used to generate graphs
 
+Notice
+======
+This project works with ndnSIM 1.0 and its corresponding ns-3, since some forwarding strategies are remove in ndnSIM2.
+after ndnSIM and ns-3 are downloaded, checking out to the v1 is needed, with commands:
+```shell
+    git checkout origin/ndnSIM-v1 -b for-ndns
+    git checkout origin/master-v1 -b for-ndns
+```
+
 Prerequisites
 =============
 
@@ -33,9 +42,10 @@ The code should also work with the latest version of ndnSIM, but it is not guara
     cd ns-dev
 
     git clone git://github.com/cawka/ns-3-dev-ndnSIM.git ns-3
+    git checkout origin/ndnSIM-v1 -b for-ndns
     git clone git://github.com/cawka/pybindgen.git pybindgen
     git clone git://github.com/NDN-Routing/ndnSIM.git ns-3/src/ndnSIM
-
+    git checkout origin/master-v1 -b for-ndns
     git clone git://github.com/cawka/ndnSIM-scenario-template.git my-simulations
 
     cd ns-3
