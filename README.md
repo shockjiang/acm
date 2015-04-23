@@ -133,4 +133,7 @@ Available simulations
 <Scenario Name>
 ---------------
 
-Description
+For current, the only available simulation scenario is select-ns.cc, which adopts a very simple topology(4 nodes, 4 links),
+to show how the adaptive forwarding choose the best name server (NS).
+A tracer is install on the key router to trace how it forward/receive packets;
+Another tracer is install on the consumer to trace the delay of sending requests
