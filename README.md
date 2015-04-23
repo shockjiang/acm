@@ -3,18 +3,21 @@ About This Project
 This project aims to evaluate the NDNS, esp. how the multipath routing and adaptive forwarding
 benefit the system:
 - select the best name server according the realtime network traffic, related files:
-  - results/aggregate-trace.txt
+  - results/aggregate-trace-<SUFFIX>.txt
   - graphs/request_delay_trace.awk
-  - graphs/data/responses-from-ns.txt
+  - graphs/data/responses-from-ns-<SUFFIX>.txt
   - graphs/responses_from_ns.py
-  - graphs/pdfs/responses-from-ns.pdf
+  - graphs/pdfs/responses-from-ns-<SUFFIX>.pdf
 - fast retry after transmission failure to cover the time gap, related files:
-  - results/request-delay-trace.txt
+  - results/request-delay-trace-<SUFFIX>.txt
   - graphs/request_delay_trace.awk
-  - graphs/data/request-delay.txt
+  - graphs/data/request-delay-<SUFFIX>.txt
   - graphs/delay_distribution.py
-  - graphs/pdfs/delay-distribution.{pdf, png}
+  - graphs/pdfs/delay-distribution-<SUFFIX>.{pdf, png}
 
+Note that the <SUFFIX> refers to a string which made up by parameters of the scenario.
+For current, the <SUFFIX> is freq400-intv10-stg8, implying that the start request sending frequency is 400 per seconds (frequency=400),
+and the frequency increases every 10 seconds (interval=10), until it increase for 8 times (stage=8).
 
 Tools and Libraries
 ===================
@@ -37,7 +40,7 @@ Prerequisites
 Custom version of NS-3 and specified version of ndnSIM needs to be installed.
 
 The code should also work with the latest version of ndnSIM, but it is not guaranteed.
-
+```shell
     mkdir ns-dev
     cd ns-dev
 
@@ -54,7 +57,7 @@ The code should also work with the latest version of ndnSIM, but it is not guara
     sudo ./waf install
 
     cd ../my-simulations
-
+```
 After which you can proceed to compile and run the code
 
 For more information how to install NS-3 and ndnSIM, please refer to http://ndnsim.net website.
