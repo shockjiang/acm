@@ -1,3 +1,27 @@
+About This Project
+==================
+This project aims to evaluate the NDNS, esp. how the multipath routing and adaptive forwarding
+benefit the system:
+- select the best name server according the realtime network traffic, related files:
+  - results/aggregate-trace.txt
+  - graphs/request_delay_trace.awk
+  - graphs/data/responses-from-ns.txt
+  - graphs/responses_from_ns.py
+  - graphs/pdfs/responses-from-ns.pdf
+- fast retry after transmission failure to cover the time gap, related files:
+  - results/request-delay-trace.txt
+  - graphs/request_delay_trace.awk
+  - graphs/data/request-delay.txt
+  - graphs/delay_distribution.py
+  - graphs/pdfs/delay-distribution.{pdf, png}
+
+
+Tools and Libraries
+===================
+- This project uses the ndnSIM scenario  template (git://github.com/cawka/ndnSIM-scenario-template.git) to seperate the scenarios from ndnSIM
+- gawk: gawk is used to analyze the data of tracers of ndnSIM
+- py-matplotlib: matplotlib is used to generate graphs
+
 Prerequisites
 =============
 
@@ -100,4 +124,3 @@ Available simulations
 ---------------
 
 Description
-
