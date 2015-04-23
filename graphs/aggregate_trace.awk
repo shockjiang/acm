@@ -2,8 +2,8 @@
 #time(1) face0-InInterests face0-OutInterests face0-DropInterests face0-InNacks  face0-OutNacks face0-DropNacks face0-InData face0-OutData face0-DropData
 
 BEGIN {
-  #data(time,face, type)
-  OutFile = "data/responses-from-ns.txt"
+  #data(time,faceId, type)
+  OutFile = "data/responses-from-ns" suffix ".txt"
   MaxTime = 0
 }
 {

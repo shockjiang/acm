@@ -30,36 +30,21 @@ using namespace std;
 using namespace boost;
 using namespace ns3;
 
-NS_LOG_COMPONENT_DEFINE ("Experiment");
+NS_LOG_COMPONENT_DEFINE ("Experiment.select.ns");
 
 #define _LOG_INFO(x) NS_LOG_INFO(x)
 
-void changeFreq(ndn::AppHelper consumerHelper, StringValue freq)
-{
-  consumerHelper.SetAttribute ("Frequency", freq);
-  std::cout << "update the frequency to " << std::endl;
-}
 
 int
 main (int argc, char *argv[])
 {
-  _LOG_INFO ("Begin congestion-pop scenario (NDN)");
   LogComponentEnable ("ndn.ConsumerCbr", LOG_LEVEL_INFO);
-  std::cout <<"begin" << std::endl;
-  //Config::SetDefault ("ns3::PointToPointNetDevice::DataRate", StringValue ("1Mbps"));
-  // Config::SetDefault ("ns3::DropTailQueue::MaxPackets", StringValue ("60"));
-  //Config::SetDefault ("ns3::ndn::RttEstimator::MaxRTO", StringValue ("1s"));
-  //Config::SetDefault ("ns3::ndn::ConsumerWindow::Window", StringValue ("1"));
-  // Config::SetDefault ("ns3::ndn::ConsumerWindow::InitialWindowOnTimeout", StringValue ("false")); // irrelevant
+  LogComponentEnable ("Experiment.select.ns", LOG_LEVEL_INFO);
 
   CommandLine cmd;
   cmd.Parse (argc, argv);
 
   string prefix = "/prefix";
-
-  // boost::tuple< boost::shared_ptr<std::ostream>, std::list<Ptr<ndn::L3RateTracer> > >
-  //   rateTracers = ndn::L3RateTracer::InstallAll (prefix + "rate-trace.log", Seconds (0.5));
-
 
   AnnotatedTopologyReader topologyReader ("", 1);
   topologyReader.SetFileName ("topologies/ndns-5node.txt");
@@ -83,7 +68,7 @@ main (int argc, char *argv[])
   ndnHelper.SetForwardingStrategy ("ns3::ndn::fw::BestRoute::PerOutFaceLimits",
                                    "Limit", "ns3::ndn::Limits::Rate",
                                    "EnableNACKs", "true");
-  ndnHelper.EnableLimits (true, Seconds (0.3));
+  ndnHelper.EnableLimits (true);
   //ndnHelper.EnableLimits (true, Seconds (0.3), 40, 1040);
   ndnHelper.SetDefaultRoutes (false);
   ndnHelper.InstallAll ();
@@ -92,15 +77,22 @@ main (int argc, char *argv[])
   ndn::GlobalRoutingHelper ndnGlobalRoutingHelper;
   ndnGlobalRoutingHelper.InstallAll ();
 
+  int START_FREQ = 400;
+  int INTERVAL = 10.0;
+  int STAGE_CNT = 8;
+  string suffix;
+  suffix += "-freq"+to_string(START_FREQ)+"-intv" + to_string(INTERVAL) + "-stg" + to_string(STAGE_CNT);
+
+  std::cout <<"Simulation begins, parameters: " << suffix << std::endl;
+
   // Consumer
   ndn::AppHelper consumerHelper ("ns3::ndn::ConsumerCbr");
   consumerHelper.SetPrefix (prefix +"/c0");
-  consumerHelper.SetAttribute ("Frequency", StringValue ("500"));
+  consumerHelper.SetAttribute ("Frequency", StringValue (to_string(START_FREQ)));
   ApplicationContainer apps = consumerHelper.Install (consumers);
   apps.Start(Seconds(0.0));
 
-  int INTERVAL = 10.0;
-  int STAGE_CNT = 7;
+
   for (int i=1; i <= STAGE_CNT; i++) {
     ndn::AppHelper consumerHelper ("ns3::ndn::ConsumerCbr");
     consumerHelper.SetPrefix (prefix +"/c" + to_string(i));
@@ -127,8 +119,8 @@ main (int argc, char *argv[])
   ndn::StackHelper::AddRoute  ("1", prefix, "4", 10); // link to n1
 
 
-  ndn::AppDelayTracer::Install(consumers, "results/request-delay-trace.txt");
-  ndn::L3AggregateTracer::Install(routers, "results/aggregate-trace.txt", Seconds (1.0));
+  ndn::AppDelayTracer::Install(consumers, "results/delay-trace" + suffix + ".txt");
+  ndn::L3AggregateTracer::Install(routers, "results/aggregate-trace" + suffix + ".txt", Seconds (1.0));
 
   Simulator::Stop (Seconds((STAGE_CNT + 1) * INTERVAL + 1.0));
   Simulator::Run ();

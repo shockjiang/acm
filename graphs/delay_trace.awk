@@ -1,8 +1,7 @@
 #! /usr/bin/env gawk -f
 
 BEGIN {
-  #data(time,face, type)
-  OutFile = "data/request-delay.txt"
+  OutFile = "data/request-delay" suffix ".txt"
   print "#time", "FullDelay" > OutFile
 }
 {
