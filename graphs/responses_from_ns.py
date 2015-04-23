@@ -32,6 +32,7 @@ def run(suffix):
     DATA_FILE = "data/responses-from-ns%s.txt" %(suffix)
     OUT_FILE = 'pdfs/responses-from-ns%s.pdf' %(suffix)
 
+    print "load data file %s" %(DATA_FILE)
     lines = open (DATA_FILE, "r").readlines()
     for line in lines:
         if line.startswith("#"):
@@ -70,7 +71,7 @@ def run(suffix):
         label = LABELS[i]
         color = COLORS[i]
         l,  = plt.plot(xs, ys, LINE_STYLE, markersize=3, linewidth=LINE_WIDTH, color=color, label=label)
-    plt.legend(loc="center left")
+    #plt.legend(loc="center left")
 
     ax.yaxis.get_major_formatter().set_powerlimits((0, 100))
 
@@ -80,28 +81,28 @@ def run(suffix):
     ax.add_artist(el)
 
     ax.annotate("",
-                xy=(27, 420/Total), xycoords='data',
-                xytext=(25, 0.9), textcoords='data',
+                xy=(24, 420/Total), xycoords='data',
+                xytext=(24, 0.9), textcoords='data',
                 arrowprops=dict(arrowstyle="<-",
                                 connectionstyle="arc3"),
                 )
     ax.annotate("",
-                xy=(45, 390/Total), xycoords='data',
+                xy=(50, 390/Total), xycoords='data',
                 xytext=(50, 350/Total), textcoords='data',
                 arrowprops=dict(arrowstyle="<-",
                                 connectionstyle="arc3"),
                 )
-    plt.text(27, 400/Total, "NDN Reacts to Load", fontsize=12, bbox=dict(facecolor='y', alpha=0.10))
+    plt.text(23, 400/Total, "NDN Reacts to New Load", fontsize=12, bbox=dict(facecolor='y', alpha=0.10))
 
 
 
-    el = mpatches.Ellipse((23, 55/Total), 7, 80/Total, alpha=0.2, color='r')
+    el = mpatches.Ellipse((23, 55/Total), 7, 80/Total, alpha=0.2, color='b')
     plt.gca().add_artist(el)
-    el = mpatches.Ellipse((54, 20/Total), 7, 80/Total, alpha=0.2, color='r')
+    el = mpatches.Ellipse((54, 20/Total), 7, 80/Total, alpha=0.2, color='b')
     ax.add_artist(el)
     ax.annotate("",
                 xy=(40, 90/Total), xycoords='data',
-                xytext=(28, 0.10), textcoords='data',
+                xytext=(25, 0.10), textcoords='data',
                 arrowprops=dict(arrowstyle="<-",
                                 connectionstyle="arc3"),
                 )
@@ -111,15 +112,19 @@ def run(suffix):
                 arrowprops=dict(arrowstyle="<-",
                                 connectionstyle="arc3"),
                 )
-    plt.text(35, 100/Total, "New NS is Selected", fontsize=12, bbox=dict(facecolor='r', alpha=0.10))
+    plt.text(35, 100/Total, "New NS is Selected", fontsize=12, bbox=dict(facecolor='b', alpha=0.10))
 
+    plt.text(91, 0.91, "NS-1", fontsize=12, color='r')
+    plt.text(91, 0.54, "NS-2", fontsize=12, color='r')
+    plt.text(91, 0.35, "NS-3", fontsize=12, color='r')
 
     plt.savefig(OUT_FILE)
+    print "save figure to %s" %(OUT_FILE)
     #plt.show()
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Paramenters')
     parser.add_argument('-s', '--suffix', dest='suffix', type=str, nargs='?',
                         help='suffix to identity the scenaro')
     args = parser.parse_args()
-    print "suffx=%s" %(args.suffix)
+    print "parameter: suffx=%s" %(args.suffix)
     run(suffix=args.suffix)

@@ -31,7 +31,7 @@ def run(suffix):
 
     DATA_FILE = "data/request-delay%s.txt" %(suffix)
     OUT_FILE = 'pdfs/delay-distribution%s.pdf' %(suffix)
-
+    print "load data file %s" %(DATA_FILE)
     lines = open (DATA_FILE, "r").readlines()
     for line in lines:
         if line.startswith("#"):
@@ -78,11 +78,12 @@ def run(suffix):
     plt.text(92, 0.11, r"$RTT_{NS-2}$", fontsize=12, color='r')
     plt.text(92, 0.41, r"$RTT_{NS-3}$", fontsize=12, color='r')
     plt.savefig(OUT_FILE)
+    print "save figure to %s" %(OUT_FILE)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Paramenters')
     parser.add_argument('-s', '--suffix', dest='suffix', type=str, nargs='?',
                         help='suffix to identity the scenaro')
     args = parser.parse_args()
-    print "suffx=%s" %(args.suffix)
+    print "parameter: suffx=%s" %(args.suffix)
     run(suffix=args.suffix)
