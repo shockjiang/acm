@@ -57,7 +57,10 @@ def run(suffix, fig_size):
 
     plt.clf()
     ax = plt.gca()
-    localVars = locals()    
+
+    localVars = dict(locals())
+    localVars.update(globals())
+
     if "YLIMIT" in localVars:
         if YLIMIT[0] != None:
             ax.set_ylim(ymin = YLIMIT[0])
@@ -74,10 +77,11 @@ def run(suffix, fig_size):
         plt.title(TITLE)
     if "XLABEL" in localVars and XLABEL != None:
         plt.xlabel(XLABEL)
+        print "xlable: ", XLABEL
     if "YLABEL" in localVars and YLABEL != None:
         plt.ylabel(YLABEL)
-    
-    
+        print "ylabel:", YLABEL
+
     plt.grid()
 
     Total = 600.0

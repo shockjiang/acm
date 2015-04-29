@@ -54,7 +54,9 @@ def run(suffix, fig_size):
 
     plt.clf()
     ax = plt.gca()
-    localVars = locals()
+    localVars = dict(locals())
+    localVars.update(globals())
+
     if "YLIMIT" in localVars:
         if YLIMIT[0] != None:
             ax.set_ylim(ymin = YLIMIT[0])
@@ -71,12 +73,14 @@ def run(suffix, fig_size):
         plt.title(TITLE)
     if "XLABEL" in localVars and XLABEL != None:
         plt.xlabel(XLABEL)
+        print "xlable: ", XLABEL
     if "YLABEL" in localVars and YLABEL != None:
         plt.ylabel(YLABEL)
+        print "ylabel:", YLABEL
 
     plt.grid()
 
-    ax.yaxis.get_major_formatter().set_powerlimits((0, 1))
+    #ax.yaxis.get_major_formatter().set_powerlimits((0, 1))
 
     for i in range(DATASET_NUM):
         ys = yss[i]
