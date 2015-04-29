@@ -14,6 +14,10 @@ benefit the system:
   - graphs/data/request-delay-<SUFFIX>.txt
   - graphs/delay_distribution.py
   - graphs/pdfs/delay-distribution-<SUFFIX>.{pdf, png}
+- request distribution, related files:
+  - graphs/data/request-distribution-com-all.txt
+  - graphs/request_distribution.awk
+  - (non-upload trace) results/time-name-type-sanitized.trace, but the distribution result is above
 
 Note that the <SUFFIX> refers to a string which made up by parameters of the scenario.
 For current, the <SUFFIX> is freq400-intv10-stg8, implying that the start request sending frequency is 400 per seconds (frequency=400),
