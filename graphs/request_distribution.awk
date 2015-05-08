@@ -19,6 +19,8 @@ END {
   n = asort(data)
   hitUpper = 1 - n/FNR
   print "caching hit ratio upper bound: ", hitUpper
+  print "# of requests:", FNS > OutFile
+  print "# of distinct requests:", n > OutFile
   print "#caching hit ratio upper bound:", hitUpper > OutFile
   for (i=n; i >=1; i--) {
     print i, data[i] > OutFile

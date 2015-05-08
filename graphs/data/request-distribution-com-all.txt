@@ -1,4 +1,6 @@
 #request count
+# of requests: 
+# of distinct requests: 432316
 #caching hit ratio upper bound: 0.867969
 432316 109582
 432315 56739
