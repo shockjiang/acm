@@ -97,44 +97,52 @@ def run(suffix, fig_size):
         l,  = plt.plot(xs, ys, LINE_STYLE, markersize=1, linewidth=LINE_WIDTH, color=color, label=label)
     #plt.legend(loc="center left")
 
-    el = mpatches.Ellipse((22, 570/Total), 7, 80/Total, alpha=0.2, color="y")
+    el = mpatches.Ellipse((22, 0.95), 7, 80/Total, alpha=0.2, color="y")
     ax.add_artist(el)
-    el = mpatches.Ellipse((52, 320/Total), 7, 80/Total, alpha=0.2, color="y")
+    el = mpatches.Ellipse((52, 0.55), 7, 80/Total, alpha=0.2, color="y")
     ax.add_artist(el)
 
-    ax.annotate("",
-                xy=(30, 420/Total), xycoords='data',
-                xytext=(24, 0.9), textcoords='data',
-                arrowprops=dict(arrowstyle="<-",
-                                connectionstyle="arc3"),
+    kwargs = {"ha": "center", "va": "bottom"}
+    arrowprops = dict(arrowstyle="->", connectionstyle="arc3")
+    bbox = dict(boxstyle='round4, pad=0.15, rounding_size=0.15',edgecolor='y', facecolor='y', alpha=0.10)
+    ax.annotate("Detect Loss",
+                xytext=(30, 0.65),
+                xy=(24, 0.9),
+                arrowprops=arrowprops,
+                # bbox=bbox, # this line leads to wrong staring points of arrow
+                **kwargs
                 )
-    ax.annotate("",
-                xy=(40, 390/Total), xycoords='data',
-                xytext=(50, 350/Total), textcoords='data',
-                arrowprops=dict(arrowstyle="<-",
-                                connectionstyle="arc3"),
+    ax.annotate("Detect Loss",
+                xytext=(30, 0.65),
+                xy=(50, 0.58),
+                arrowprops=arrowprops,
+                **kwargs
                 )
-    plt.text(23, 400/Total, "Detect Loss", bbox=dict(facecolor='y', alpha=0.10))
+    plt.text(30, 0.65, "Detect Loss", bbox=bbox, **kwargs)
 
 
 
-    el = mpatches.Ellipse((23, 55/Total), 7, 80/Total, alpha=0.2, color='b')
+    el = mpatches.Ellipse((21, 0.05), 7, 80/Total, alpha=0.2, color='b')
     plt.gca().add_artist(el)
-    el = mpatches.Ellipse((54, 20/Total), 7, 80/Total, alpha=0.2, color='b')
+    el = mpatches.Ellipse((51, 0.03), 7, 80/Total, alpha=0.2, color='b')
     ax.add_artist(el)
-    ax.annotate("",
-                xy=(40, 90/Total), xycoords='data',
-                xytext=(25, 0.10), textcoords='data',
-                arrowprops=dict(arrowstyle="<-",
-                                connectionstyle="arc3"),
+
+    bbox["edgecolor"] = "y"
+    bbox["facecolor"] = "y"
+    ax.annotate("Select NS",
+                xytext=(40, 0.16),
+                xy=(23, 0.10),
+                arrowprops=arrowprops,
+                **kwargs
                 )
-    ax.annotate("",
-                xy=(50, 90/Total), xycoords='data',
-                xytext=(55, 0.1), textcoords='data',
-                arrowprops=dict(arrowstyle="<-",
-                                connectionstyle="arc3"),
+    ax.annotate("Select NS",
+                xytext=(40, 0.16),
+                xy=(50, 0.1),
+                arrowprops=arrowprops,
+                **kwargs
                 )
-    plt.text(35, 100/Total, "Select NS", bbox=dict(facecolor='b', alpha=0.10))
+
+    plt.text(40, 0.16, "Select NS", bbox=bbox, **kwargs)
 
     plt.text(91, 0.91, "NS-1", color='r')
     plt.text(91, 0.54, "NS-2", color='r')
