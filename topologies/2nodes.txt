@@ -1,0 +1,13 @@
+router
+
+#node city  y   x   mpi-partition
+0     UCLA  -100  80  1
+1     UCLA  -100  120  1
+
+link
+
+#srcNode   dstNode     bandwidth   metric  delay   queue
+0          1           10Mbps       1       5ms       15
+
+# the bandwidth/queue here very small, since we expect NDNS traffic
+# only occupy small portion of the full bandwidth/queue
