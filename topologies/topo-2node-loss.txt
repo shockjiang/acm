@@ -1,0 +1,9 @@
+router
+#Node   city  y   x   mpi-partition
+Node0   NA    -4  2
+Node1   NA    =4  3
+
+link
+#srcNode   dstNode     bandwidth   metric  delay   queue    errormodel
+Node0       Node1       100Mbps       1       10ms    100
+#Node0       Node1       100Mbps       1       10ms    100  ns3::RateErrorModel,ErrorUnit=ERROR_UNIT_BYTE,ErrorRate=6.666666666666667e-06

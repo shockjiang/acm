@@ -1,42 +1,5 @@
-About This Project
-==================
-This project aims to evaluate the NDNS, esp. how the multipath routing and adaptive forwarding
-benefit the system:
-- select the best name server according the realtime network traffic, related files:
-  - results/aggregate-trace-<SUFFIX>.txt
-  - graphs/request_delay_trace.awk
-  - graphs/data/responses-from-ns-<SUFFIX>.txt
-  - graphs/responses_from_ns.py
-  - graphs/pdfs/responses-from-ns-<SUFFIX>.pdf
-- fast retry after transmission failure to cover the time gap, related files:
-  - results/request-delay-trace-<SUFFIX>.txt
-  - graphs/request_delay_trace.awk
-  - graphs/data/request-delay-<SUFFIX>.txt
-  - graphs/delay_distribution.py
-  - graphs/pdfs/delay-distribution-<SUFFIX>.{pdf, png}
-- request distribution, related files:
-  - graphs/data/request-distribution-com-all.txt
-  - graphs/request_distribution.awk
-  - (non-upload trace) results/time-name-type-sanitized.trace, but the distribution result is above
 
-Note that the <SUFFIX> refers to a string which made up by parameters of the scenario.
-For current, the <SUFFIX> is freq400-intv10-stg8, implying that the start request sending frequency is 400 per seconds (frequency=400),
-and the frequency increases every 10 seconds (interval=10), until it increase for 8 times (stage=8).
-
-Tools and Libraries
-===================
-- This project uses the ndnSIM scenario  template (git://github.com/cawka/ndnSIM-scenario-template.git) to seperate the scenarios from ndnSIM
-- gawk: gawk is used to analyze the data of tracers of ndnSIM
-- py-matplotlib: matplotlib is used to generate graphs
-
-Notice
-======
-This project works with ndnSIM 1.0 and its corresponding ns-3, since some forwarding strategies are remove in ndnSIM2.
-after ndnSIM and ns-3 are downloaded, checking out to the v1 is needed, with commands:
-```shell
-    git checkout origin/ndnSIM-v1 -b for-ndns
-    git checkout origin/master-v1 -b for-ndns
-```
+lib: /usr/local/lib
 
 Prerequisites
 =============
