@@ -1,0 +1,399 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"rst",
+				"rst"
+			],
+			[
+				"font_",
+				"font_size"
+			],
+			[
+				"local",
+				"localVars"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "scripts/simple.py",
+			"settings":
+			{
+				"buffer_size": 459,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 87.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"open in",
+				"Open in Default Application"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"w",
+				"Word Wrap: Toggle"
+			],
+			[
+				"",
+				"Build With: Make"
+			]
+		],
+		"width": 521.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"print(\"hello\")",
+			"print \"hello\"",
+			"import os",
+			"make "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/sec/conclusion.tex",
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/sec/discussion.tex",
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/sec/head_ieee.tex",
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/sec/acm.tex",
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/sec/methodology.tex",
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/main.tex",
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/import_package.tex",
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/sec/evaluation.tex",
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/sec/fig-acm-evaluation.tex",
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/sec/fig-nplayer-running.tex",
+		"/Users/shock/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/sec/related.tex",
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/Makefile",
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/sec/introduction.tex",
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/sec/abstract.tex",
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/sec/temp.tex",
+		"/Users/shock/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/sec/app.tex",
+		"/Users/shock/Weiyun/shock-rsp/2_PaperWriting/phd-thesis/sec/modeling/summary.tex",
+		"/Users/shock/Weiyun/shock-rsp/2_PaperWriting/phd-thesis/sec/modeling/related.tex",
+		"/Users/shock/Weiyun/shock-rsp/2_PaperWriting/phd-thesis/sec/modeling/discussion.tex",
+		"/Users/shock/Weiyun/shock-rsp/2_PaperWriting/phd-thesis/sec/ndns/main.tex",
+		"/Users/shock/Weiyun/shock-rsp/2_PaperWriting/phd-thesis/sec/background.tex",
+		"/Users/shock/Weiyun/shock-rsp/2_PaperWriting/phd-thesis/sec/ndns.tex",
+		"/Users/shock/Weiyun/shock-rsp/2_PaperWriting/phd-thesis/sec/ndn-challenges.tex",
+		"/Users/shock/Weiyun/shock-rsp/2_PaperWriting/phd-thesis/sec/RECYCLE/nsimulator.tex",
+		"/Users/shock/Weiyun/shock-rsp/2_PaperWriting/phd-thesis/sec/RECYCLE/nplayer.tex",
+		"/Users/shock/Weiyun/shock-rsp/2_PaperWriting/phd-thesis/sec/extensions/ack.tex",
+		"/Users/shock/Weiyun/shock-rsp/2_PaperWriting/phd-thesis/sec/modeling/main.tex",
+		"/Users/shock/Weiyun/shock-rsp/2_PaperWriting/phd-thesis/sec/temp.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/ndn-challenges.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/modelling/discussion.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/modelling/summary.tex",
+		"/Users/shock/Downloads/wtf",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/temp_20160103172846.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/ndns/summary.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/background.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/ndn/ndn.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/ndns/dns.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/ndns.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/ndns/differences.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/temp.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/icn/icn.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/temp.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/appendix01.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/resume.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/icn/idea.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/denotation.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/ndn/security.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/ndn/naming.tex",
+		"/Users/shock/workspaces/ndns/src/clients/query-controller.cpp",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/ndn/routing.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/ndn/forwarding.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/main.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/sec/abstract.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/Makefile",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/phd-thesis/sec/mobility.tex",
+		"/Users/shock/Downloads/untitled.py",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/ack.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/overview.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/overview-caching.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/overview-retrieve.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/overview-naming.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/introduction.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/abstract.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/main-zh.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/why-icn.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/import_package.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/import_package.tex",
+		"/Users/shock/Documents/btlab_yunshui_test_1126/mainsite/utils.py",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/debates.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/debate-caching.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/debate-naming-trust.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/summary.tex",
+		"/Users/shock/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/overview-trust.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/head.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/abstract_content.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/1_Project/latex-tutorial/zh/zh-ex.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/zh/import_package_20151128193646.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/8_Personal/resume/latex-cv/清华-蒋小可.tex",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/latex.sublime-project",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/Makefile",
+		"/Users/shock/百度云同步盘/shock-rsp/2_PaperWriting/201502-icn-survey/sec/overview.tex",
+		"/Users/shock/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/shock/Downloads/make-debug.sublime-build",
+		"/Users/shock/Downloads/test.py",
+		"/Users/shock/Library/Application Support/Sublime Text 3/Packages/User/JSON.sublime-settings",
+		"/Users/shock/shock-rsp/2_PaperWriting/201505-nCDN/sec/discussion.tex",
+		"/Users/shock/shock-rsp/8_Personal/resume/latex-cv/cv.tex",
+		"/Users/shock/Downloads/IN_files/Datasets/cooked_trace45946",
+		"/Users/shock/Downloads/IN_files/Datasets/trace45946",
+		"/Users/shock/Downloads/IN_files/Datasets/sizes",
+		"/Users/shock/workspaces/ndns-evaluation/scripts/delay_fw.py",
+		"/Users/shock/workspaces/ndns-evaluation/scripts/delay_rt.py",
+		"/Users/shock/workspaces/ndns-evaluation/scripts/delay_distribution.py",
+		"/Users/shock/workspaces/ndns-evaluation/scripts/responses_from_ns.py",
+		"/Users/shock/workspaces/ndns-evaluation/run.py",
+		"/Users/shock/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/169550B5-4642-420A-81DE-E56754577FE9/2015年论文标注.txt",
+		"/Users/shock/shock-rsp/2_PaperWriting/201502-icn-survey/icn-survey.bib",
+		"/Users/shock/workspaces/ndns-evaluation/graphs/run-python.sh",
+		"/Users/shock/workspaces/ndns/docs/conf.py",
+		"/Users/shock/shock-rsp/2_PaperWriting/201408-ndns-tr/authors_ieee.tex.bak",
+		"/Users/shock/workspaces/ndns-evaluation/graphs/responses_from_ns.py",
+		"/Users/shock/shock-rsp/2_PaperWriting/phd-thesis/main.tex.bak",
+		"/Users/shock/shock-rsp/8_Personal/1_Poetry/poetry",
+		"/Users/shock/shock-rsp/8_Personal/1_Poetry/不打折的爱情.txt",
+		"/Users/shock/workspaces/ndns-evaluation/graphs/latexify.py",
+		"/Users/shock/workspaces/ndns-evaluation/graphs/delay_distribution.py",
+		"/Volumes/SHOCK/ndns-input/trace-splitter.py",
+		"/Users/shock/shock-rsp/2_PaperWriting/201408-ndns-tr/experiments/examples/smooth_gap.py",
+		"/Users/shock/Downloads/annotate_explain.py",
+		"/Users/shock/Downloads/stem_plot.py",
+		"/Users/shock/shock-rsp/2_PaperWriting/201408-ndns-tr/experiments/examples/choose_servers.py",
+		"/Users/shock/shock-rsp/2_PaperWriting/header/author_jiang_bi_guo.tex",
+		"/Users/shock/shock-rsp/2_PaperWriting/201502-icn-survey/0-outlines.txt"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 96.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"M",
+			"Interest",
+			"。",
+			"MTU",
+			"映射成对应的自验证名字，然而如何通过自验证名字从该映射系统里取得数据，并验证映射系统得到的数据成为新的问题；而且这个系统需要为每个",
+			"自验证",
+			"color",
+			"font",
+			"Vint",
+			" \\",
+			"ruler",
+			"move",
+			"build"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "scripts/simple.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 459,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								355,
+								355
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 130.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/make-debug.sublime-build",
+	"project": "acm-simulation.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"201311-chunksize/main.tex"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 246.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

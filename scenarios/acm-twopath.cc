@@ -8,18 +8,19 @@ main(int argc, char* argv[])
 {
   int stage = 17; 
   float interval = 20.0;
-  string topo = "topologies/topo-2node-loss.txt";
-  topo = "topologies/topo-3node-loss.txt";
-  int loss = 0;
-  string id = "0";
+  string topo = "topologies/topo-3link-loss1.txt";
+  int loss = 1;
+  int load = 50;
+  string id = "2";
   CommandLine cmd;
   cmd.AddValue("loss", "frame loss rate ratio (x100)", loss);
   cmd.AddValue("topo", "topology input file", topo);
   cmd.AddValue("id", "id of the running instance", id);
-
+  cmd.AddValue("load", "load of one way, 100 in total", load);
   cmd.Parse(argc, argv);
   
-  string suffix = "-loss" + to_string(loss) + "-id" + id;
+  string suffix = "-loss" + to_string(loss) +"-load" + to_string(load)
+                 + "-id" + id;
   AnnotatedTopologyReader topologyReader("", 1.0);
   topologyReader.SetFileName(topo);
   topologyReader.Read();
@@ -40,54 +41,48 @@ main(int argc, char* argv[])
   consumerNodes.Add(Names::Find<Node>("Node0"));
 
   // Install NDN applications
-  std::string prefix = "/prefix";
-
-
-//  ndn::AppHelper consumerHelper("ns3::ndn::ConsumerCbr");
-//  consumerHelper.SetPrefix(prefix);
-//  consumerHelper.SetAttribute("Frequency", StringValue("100")); // 100 interests a second
-//  consumerHelper.Install(consumerNodes);
-//
-
+  std::string prefixA = "/prefix/A";
+  std::string prefixB = "/prefix/B";
 
   for (int i = 0; i < stage; i++) {
     ndn::AppHelper consumerHelper("ns3::ndn::ConsumerCbr");
-    consumerHelper.SetPrefix(prefix + "/" + to_string(625 + i * 500));
-    consumerHelper.SetAttribute("Frequency", StringValue("100")); // 100 interests a second
+    consumerHelper.SetPrefix(prefixA + "/" + to_string(625 + i * 500));
+    consumerHelper.SetAttribute("Frequency", StringValue(to_string(load))); // 100 interests a second
     ApplicationContainer apps = consumerHelper.Install(consumerNodes);
     apps.Start(Seconds(interval * i));
     apps.Stop(Seconds(interval * i + interval));
   }
 
+for (int i = 0; i < stage; i++) {
+    ndn::AppHelper consumerHelper("ns3::ndn::ConsumerCbr");
+    consumerHelper.SetPrefix(prefixB + "/" + to_string(625 + i * 500));
+    consumerHelper.SetAttribute("Frequency", StringValue(to_string(100-load))); // 100 interests a second
+    ApplicationContainer apps = consumerHelper.Install(consumerNodes);
+    apps.Start(Seconds(interval * i));
+    apps.Stop(Seconds(interval * i + interval));
+  }
 
-//  for (int i=0; i < stage; i++) {
-//      ndn::AppHelper producerHelper("ns3::ndn::Producer");
-//      producerHelper.SetPrefix(prefix);
-//      producerHelper.SetAttribute("PayloadSize", StringValue(to_string(1475+i*1500)));
-//      // producerHelper.SetAttribute("PayloadSize", StringValue("16475"));
-//      ApplicationContainer apps = producerHelper.Install(producer);
-//      apps.Start(Seconds(interval*i));
-//      apps.Stop(Seconds(interval*i + interval));
-//  }
-//
+  ndn::AppHelper producerHelper("ns3::ndn::ProducerACM");
+  producerHelper.SetPrefix(prefixA);
+  producerHelper.SetAttribute("PayloadSize", StringValue("1024"));
+  ApplicationContainer apps = producerHelper.Install(producer);
+  apps.Start(Seconds(0));
 
-    ndn::AppHelper producerHelper("ns3::ndn::ProducerACM");
-    producerHelper.SetPrefix(prefix);
-    producerHelper.SetAttribute("PayloadSize", StringValue("1024"));
-    ApplicationContainer apps = producerHelper.Install(producer);
-    apps.Start(Seconds(0));
+  ndn::AppHelper producerHelper2("ns3::ndn::ProducerACM");
+  producerHelper2.SetPrefix(prefixB);
+  producerHelper2.SetAttribute("PayloadSize", StringValue("1024"));
+  ApplicationContainer apps2 = producerHelper2.Install(producer);
+  apps2.Start(Seconds(0));
 
-  // Add /prefix origins to ndn::GlobalRouter
-  ndnGlobalRoutingHelper.AddOrigins(prefix, producer);
+  ndn::FibHelper::AddRoute("Node0", prefixA, "Node1", 1); // link 257, 
+  ndn::FibHelper::AddRoute("Node0", prefixB, "Node2", 1); // link 256, two links
+  ndn::FibHelper::AddRoute("Node2", prefixB, "Node1", 1); 
 
-  // Calculate and install FIBs
-  ndn::GlobalRoutingHelper::CalculateRoutes();
 
   Simulator::Stop(Seconds(interval*stage + 1));
 
 //  L2RateTracer::InstallAll("results/l2rate-trace.txt", Seconds(0.5));
   ndn::L3RateTracer::InstallAll("results/l3rate-trace"+suffix+".txt", Seconds(1.0));
-
 
   Simulator::Run();
   Simulator::Destroy();

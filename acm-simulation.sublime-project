@@ -1,0 +1,20 @@
+{
+	"folders":
+	[
+		{
+			"path": "scripts"
+		},
+		{
+			"path": "results"
+		},
+		{
+			"path": "figures"
+		},
+		{
+			"path": "topologies"
+		},
+		{
+			"path": "scenarios"
+		}
+	]
+}
