@@ -2,7 +2,7 @@
 all: acm-singlehop acm-twohop acm-twopath acm-twolink
 debug: acm-twopath
 
-loss=1
+loss=0
 load=50
 group=20
 
