@@ -8,10 +8,9 @@ main(int argc, char* argv[])
 {
   int stage = 17; 
   float interval = 20.0;
-  string topo = "topologies/topo-2node-loss.txt";
-  topo = "topologies/topo-3node-loss.txt";
+  string topo = "topologies/topo-3node-loss10.txt";
   int loss = 0;
-  string id = "0";
+  string id = "x";
   CommandLine cmd;
   cmd.AddValue("loss", "frame loss rate ratio (x100)", loss);
   cmd.AddValue("topo", "topology input file", topo);

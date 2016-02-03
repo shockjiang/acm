@@ -83,6 +83,7 @@ def group(xs, ys, args):
         th = math.pow(1 - t, 500*i+650)
         if args.cid == 1: #two hops
             th = math.pow(th, 2)
+            print "theory chunk received ratio: ", th
         th = th * r
         ths.append(th)
     return [x*500 for x in xs2], [avs, mis, mas, ths]

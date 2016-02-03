@@ -9,5 +9,5 @@ link
 #Node0       Node1       100Mbps       1       10ms    100
 
 #the following is frame loss rate 0.01
-Node0       Node2       100Mbps       1       10ms    100  ns3::RateErrorModel,ErrorUnit=ERROR_UNIT_BYTE,ErrorRate=3.4195e-5
-Node2       Node1       100Mbps       1       10ms    100
+Node0       Node2       100Mbps       1       10ms    100
+Node2       Node1       100Mbps       1       10ms    100  ns3::RateErrorModel,ErrorUnit=ERROR_UNIT_BYTE,ErrorRate=3.4195e-5
