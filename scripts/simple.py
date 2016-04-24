@@ -5,8 +5,15 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import argparse
 import sys
+import os.path
 import latexify
 latexify.latexify(columns=1)
+
+def offsetLogger(offsets, args, outf="results/offset-stat.txt"):
+    with open(outf, "a") as of:
+        for offset in offsets:
+            of.write("%s %f\n" %(args.outFile, offset))
+    of.close()
 
 def extract(tracefile):
     yss = []
@@ -54,6 +61,7 @@ def group(xs, ys, args):
     assert len(xs) == len(ys), "len(xs)==%d but len(ys)==%d" %(len(xs), lne(ys))
     assert len(xs) % group == 0, "len(xs)==%d but len(xs) MOD group != 0" %(len(xs))
 
+    offsets = []
     avs = []
     mis = []
     mas = []
@@ -67,7 +75,8 @@ def group(xs, ys, args):
         av = float(sum(samples))/len(samples)
         r = (500.0 * i)/(500*i+650.0)
         # print samples, av/100.0, r
-        avs.append(av/100.0*r)
+        theav = av/100.0*r
+        avs.append(theav)
         mis.append((av-mi)/100*r)
         mas.append((ma-av)/100*r)
         if args.loss == 1:
@@ -83,9 +92,12 @@ def group(xs, ys, args):
         th = math.pow(1 - t, 500*i+650)
         if args.cid == 1: #two hops
             th = math.pow(th, 2)
-            print "theory chunk received ratio: ", th
+            # print "theory chunk received ratio: ", th
         th = th * r
         ths.append(th)
+        offset = abs(th - theav)/float(th)
+        offsets.append(offset)
+    offsetLogger(offsets, args)
     return [x*500 for x in xs2], [avs, mis, mas, ths]
 
 
@@ -104,7 +116,9 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     print args
-    xs, yss = extract(args.inFile)
-    xs, yss = group(xs, yss[0], args)
-
-    draw(xs, yss, args.outFile)
+    if os.path.isfile(args.inFile):
+        xs, yss = extract(args.inFile)
+        xs, yss = group(xs, yss[0], args)
+        # draw(xs, yss, args.outFile)
+    else:
+        print "%s not exist" %(args.inFile)

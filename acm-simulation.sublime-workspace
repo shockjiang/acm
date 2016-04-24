@@ -52,74 +52,18 @@
 	"buffers":
 	[
 		{
-			"file": "scenarios/acm-twopath.cc",
-			"settings":
-			{
-				"buffer_size": 3428,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scripts/simple.py",
-			"settings":
-			{
-				"buffer_size": 3778,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scripts/list.gawk",
-			"settings":
-			{
-				"buffer_size": 762,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "results/l3rate-trace-loss1-id1.txt",
-			"settings":
-			{
-				"buffer_size": 3058395,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scenarios/acm-simple.cc",
-			"settings":
-			{
-				"buffer_size": 3255,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "topologies/topo-3node-loss10.txt",
 			"settings":
 			{
-				"buffer_size": 328,
+				"buffer_size": 426,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "scripts/getloss.py",
+			"file": "topologies/topo-3link-loss1.txt",
 			"settings":
 			{
-				"buffer_size": 600,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Makefile",
-			"settings":
-			{
-				"buffer_size": 1541,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/shock/workspaces/ndnSIM/ns-3/Makefile",
-			"settings":
-			{
-				"buffer_size": 2423,
+				"buffer_size": 641,
 				"line_ending": "Unix"
 			}
 		}
@@ -206,15 +150,19 @@
 	"expanded_folders":
 	[
 		"/Users/shock/workspaces/acm/scripts",
+		"/Users/shock/workspaces/acm/topologies",
 		"/Users/shock/workspaces/acm/scenarios"
 	],
 	"file_history":
 	[
-		"/Users/shock/workspaces/acm/topologies/topo-3node-loss10.txt",
+		"/Users/shock/workspaces/acm/scenarios/acm-twopath.cc",
 		"/Users/shock/workspaces/acm/scripts/simple.py",
+		"/Users/shock/workspaces/acm/scripts/list.gawk",
+		"/Users/shock/workspaces/acm/scenarios/acm-simple.cc",
 		"/Users/shock/workspaces/acm/scripts/getloss.py",
 		"/Users/shock/workspaces/acm/Makefile",
 		"/Users/shock/workspaces/ndnSIM/ns-3/Makefile",
+		"/Users/shock/workspaces/acm/topologies/topo-3node-loss10.txt",
 		"/Users/shock/workspaces/acm/topologies/topo-2node-loss10-burst.txt",
 		"/Users/shock/workspaces/acm/topologies/topo-2node-loss5-burst.txt",
 		"/Users/shock/workspaces/acm/topologies/topo-2node-loss1-burst.txt",
@@ -238,7 +186,6 @@
 		"/Users/shock/workspaces/acm/topologies/topo-2node-loss.txt",
 		"/Users/shock/workspaces/acm/results/l3rate-trace.txt",
 		"/Users/shock/workspaces/acm/figures/chunklossrate.pdf",
-		"/Users/shock/workspaces/acm/scenarios/acm-simple.cc",
 		"/Users/shock/workspaces/acm/figures/error-free.pdf",
 		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/sec/conclusion.tex",
 		"/Users/shock/Dropbox/shock-rsp/2_PaperWriting/201311-chunksize/sec/discussion.tex",
@@ -335,9 +282,7 @@
 		"/Users/shock/workspaces/ndns-evaluation/scripts/delay_fw.py",
 		"/Users/shock/workspaces/ndns-evaluation/scripts/delay_rt.py",
 		"/Users/shock/workspaces/ndns-evaluation/scripts/delay_distribution.py",
-		"/Users/shock/workspaces/ndns-evaluation/scripts/responses_from_ns.py",
-		"/Users/shock/workspaces/ndns-evaluation/run.py",
-		"/Users/shock/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/169550B5-4642-420A-81DE-E56754577FE9/2015年论文标注.txt"
+		"/Users/shock/workspaces/ndns-evaluation/scripts/responses_from_ns.py"
 	],
 	"find":
 	{
@@ -387,172 +332,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "scenarios/acm-twopath.cc",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3428,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2996,
-								2996
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1044.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "scripts/simple.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3778,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1460,
-								1288
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 500.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "scripts/list.gawk",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 762,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								659,
-								659
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "results/l3rate-trace-loss1-id1.txt",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 3058395,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13456,
-								13456
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": -0.0,
-						"translation.y": 4868.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "scenarios/acm-simple.cc",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3255,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								231,
-								231
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "topologies/topo-3node-loss10.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 328,
+						"buffer_size": 426,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								326,
-								326
+								365,
+								365
 							]
 						],
 						"settings":
@@ -564,93 +361,36 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "scripts/getloss.py",
-					"semi_transient": false,
+					"buffer": 1,
+					"file": "topologies/topo-3link-loss1.txt",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 600,
+						"buffer_size": 641,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								348,
-								348
+								275,
+								275
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"word_wrap": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "Makefile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1541,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								185,
-								185
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Makefile/Makefile.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/Users/shock/workspaces/ndnSIM/ns-3/Makefile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2423,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								937,
-								937
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Makefile/Makefile.tmLanguage"
-						},
-						"translation.x": -0.0,
-						"translation.y": 188.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

@@ -5,8 +5,15 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import argparse
 import sys
+import os.path
 import latexify
 latexify.latexify(columns=1)
+
+def offsetLogger(offsets, args, outf="results/offset-stat.txt"):
+    with open(outf, "a") as of:
+        for offset in offsets:
+            of.write("%s %f\n" %(args.outFile, offset))
+    of.close()
 
 def extract(tracefile):
     yss = []
@@ -58,6 +65,7 @@ def group(xs, yss, args):
     assert len(xs) == len(yss[1]), "len(xs)==%d but len(ys[1])==%d" %(len(xs), lne(yss[1]))
     assert len(xs) % group == 0, "len(xs)==%d but len(xs) MOD group != 0" %(len(xs))
 
+    offsets = []
     avs = []
     mis = []
     mas = []
@@ -72,8 +80,8 @@ def group(xs, yss, args):
         mi = min(samples)
         ma = max(samples)
         av = float(sum(samples))/len(samples)
-        
-        avs.append(av/100.0*r)
+        theav = av/100.0*r
+        avs.append(theav)
         mis.append((av-mi)/100*r)
         mas.append((ma-av)/100*r)
         if args.loss == 1:
@@ -91,6 +99,9 @@ def group(xs, yss, args):
         th = (p1*args.load + p2*(100-args.load))/100.0 * r
 
         ths.append(th)
+        offset = abs(th - theav)/float(th)
+        offsets.append(offset)
+    offsetLogger(offsets, args)
     return [x*500 for x in xs2], [avs, mis, mas, ths]
 
 
@@ -109,10 +120,11 @@ if __name__ == "__main__":
     parser.add_argument("--id", dest="cid", type=int, nargs='?', 
                         help="id to indicate the test case", default=0)
 
-    
     args = parser.parse_args()
     print args
-    xs, yss = extract(args.inFile)
-    xs, yss = group(xs, yss, args)
-
-    draw(xs, yss, args.outFile)
+    if os.path.isfile(args.inFile):
+        xs, yss = extract(args.inFile)
+        xs, yss = group(xs, yss, args)
+        # draw(xs, yss, args.outFile)
+    else:
+        print "%s not exist" %(args.inFile)
