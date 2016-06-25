@@ -95,7 +95,7 @@ def group(xs, yss, args):
         else:
             t = 0
         p1 = math.pow(1 - t, 500*i+650)
-        p2 = math.pow(p1, 2)
+        p2 = math.pow(p1, 1)
         th = (p1*args.load + p2*(100-args.load))/100.0 * r
 
         ths.append(th)

@@ -4,7 +4,6 @@ BEGIN {
   avg = 0
   sqr = 0
   cnt = 0
-  values = []
 }
 {
   print $2
@@ -15,8 +14,8 @@ BEGIN {
 }
 END {
   print cnt
-  expectation = avg/cnt
-  error = 
+  expectation = avg/cnt 
+  
   variance = sqr/cnt - expectation * expectation
 
   print expectation, variance

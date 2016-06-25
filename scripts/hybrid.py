@@ -20,6 +20,7 @@ def extract(tracefile):
     xs = []
     ys1 = []
     ys2 = []
+    ys3 = []
     with open(tracefile) as fin:
         for line in fin:
             line = line.strip()
@@ -30,7 +31,10 @@ def extract(tracefile):
                 xs.append(int(rds[int(0)]))
             elif rds[1] == "Node0" and rds[2] == "256" and rds[4] == "InData":
                 ys2.append(float(rds[5]))
-    yss = [ys1, ys2]
+            elif rds[1] == "Node0" and rds[2] == "258" and rds[4] == "InData":
+                ys3.append(float(rds[5]))
+
+    yss = [ys1, ys2, ys3]
     return xs, yss
 
 def draw(xs, yss, of, **kwargs):
@@ -76,7 +80,9 @@ def group(xs, yss, args):
         r = (500.0 * i)/(500*i+650.0)
         ysa = yss[0][begin:begin+group]
         ysb = yss[1][begin:begin+group]
-        samples = [ysa[j] + ysb[j] for j in range(group)]
+        ysc = yss[2][begin:begin+group]
+
+        samples = [ysa[j] + ysb[j] + ysc[j] for j in range(group)]
         mi = min(samples)
         ma = max(samples)
         av = float(sum(samples))/len(samples)
@@ -94,9 +100,10 @@ def group(xs, yss, args):
             t = 7.02379e-5
         else:
             t = 0
-        p1 = math.pow(1 - t, 500*i+650)
-        p2 = math.pow(p1, 2)
-        th = (p1*args.load + p2*(100-args.load))/100.0 * r
+        p1 = math.pow(1 - t, 500*i+650) # node0-node2-node1, 
+        p2 = math.pow(p1, 1) #node0-node4-node3
+        p3 = math.pow(p1, 1) #node0-node1
+        th = (p1*args.load + p2*args.load2 + p3*(100-args.load-args.load2))/100.0 * r
 
         ths.append(th)
         offset = abs(th - theav)/float(th)
@@ -116,7 +123,9 @@ if __name__ == "__main__":
     parser.add_argument('-l', "--loss", dest="loss", type=float, nargs='?', 
                         default=0, help="a float to indicate the frame loss rate")
     parser.add_argument("--load", dest="load", type=int, nargs='?', 
-                        default=50, help="percentage of the load of the first path")
+                        default=30, help="percentage of the load of the first path")
+    parser.add_argument("--load2", dest="load2", type=int, nargs='?', 
+                        default=30, help="percentage of the load of the first path")
     parser.add_argument("--id", dest="cid", type=int, nargs='?', 
                         help="id to indicate the test case", default=0)
 
